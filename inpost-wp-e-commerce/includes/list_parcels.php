@@ -425,10 +425,10 @@ function do_process($action, $id)
 		if($reply['info']['http_code'] == '200')
 		{
 			// Try and save the PDF as a local (server) file.
-			$base_name = '/pdf_files/' . 'stickers_' .
+			$base_name = '-pdfs/' . 'stickers_' .
 				date('Y-m-d_H-i-s') . '.pdf';
-			$dir_filename = dirname(__FILE__) . $base_name;
-			$filename     = plugins_url('', __FILE__) . $base_name;
+			$dir_filename = INPOST_PLUGIN_FILE . $base_name;
+			$filename     = plugins_url() . '/inpost-wp-e-commerce' . $base_name;
 
 			$file = fopen($dir_filename, 'wb');
 

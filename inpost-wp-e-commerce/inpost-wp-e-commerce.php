@@ -3,7 +3,7 @@
  * Plugin Name: InPost WP e-commerce Plugin
  * Plugin URI: http://www.inpost.co.uk
  * Description: This plugin allows shoppers to pick an InPost location for their parcel. Requires WordPress e-Commerce.
- * Version: 1.0.1
+ * Version: 1.0
  * Author: InPost, David Arthur
  * Author URI: http://www.inpost.co.uk
  * License: GPL2
@@ -35,6 +35,10 @@ if ( ! defined( 'INPOST_TABLE_NAME' ) )
 if ( ! defined( 'INPOST_DB_VERSION' ) )
 {
 	define('INPOST_DB_VERSION', '1.0.1');
+}
+if ( ! defined( 'INPOST_PLUGIN_FILE' ) )
+{
+	define('INPOST_PLUGIN_FILE', dirname(__FILE__));
 }
 
 if( ! class_exists( 'My_List_Parcel' ) )
@@ -132,7 +136,7 @@ class inpostshipping
 		<tr>
 			<td<?php echo $class; ?> colspan="2">
 				<div class="cell-wrapper">
-					<input type="text" name="wpsc_shipping_inpostshipping_shipping[api_url]" placeholder="http://api-uk.easypack24.net/" default="25" value="<?php echo esc_attr( $shipping['api_url'] ); ?>" size="30" />
+					<input type="text" name="wpsc_shipping_inpostshipping_shipping[api_url]" placeholder="Site URL included with API Key" default="25" value="<?php echo esc_attr( $shipping['api_url'] ); ?>" size="30" />
 				</div>
 			</td>
 			<td<?php echo $class; ?> colspan="2">
